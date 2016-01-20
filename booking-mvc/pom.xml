@@ -324,6 +324,34 @@
 					<wtpversion>2.0</wtpversion>
 				</configuration>
 			</plugin>
+			<plugin>
+				<groupId>fr.treeptik</groupId>
+				<artifactId>cloudunit-maven-plugin</artifactId>
+				<version>1.0</version>
+				<configuration>
+
+					<!-- Non required : by default, the plugin uses a Cloudunit Manager
+					installed on your local host on 8080 port (http://127.0.0.1:8080)-->
+
+					<managerLocation>127.0.0.1</managerLocation>
+					<managerPort>8080</managerPort>
+
+					<!-- Required : your Cloudunit credentials and the app you want to deploy on.
+					You must create the app before, add modules and parameters before using it-->
+
+					<username>johndoe</username>
+					<password>abc2015</password>
+
+                    <createIfNotExists>true</createIfNotExists>
+
+                    <applicationName>montpellierjug</applicationName>
+
+                    <modules>
+                        <param>mysql-5-5</param>
+                    </modules>
+
+                </configuration>
+			</plugin>
 		</plugins>
 	</build>
 
