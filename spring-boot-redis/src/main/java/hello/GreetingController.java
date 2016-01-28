@@ -38,7 +38,7 @@ public class GreetingController {
         jedis.auth(redisPassword);
     }
 
-    @RequestMapping(value="/greeting", method=RequestMethod.GET)
+    @RequestMapping(value="/", method=RequestMethod.GET)
     public String greetingForm(Model model) {
         try {
             // Get the stored data and print it
@@ -54,7 +54,7 @@ public class GreetingController {
         return "greeting";
     }
 
-    @RequestMapping(value="/greeting", method=RequestMethod.POST)
+    @RequestMapping(value="/", method=RequestMethod.POST)
     public String greetingSubmit(@ModelAttribute Greeting greeting, Model model) {
         try {
             jedis.lpush("greetings-list", greeting.getContent());

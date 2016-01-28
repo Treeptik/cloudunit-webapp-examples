@@ -34,10 +34,10 @@ public class Application {
             System.out.println("Connection to server sucessfully");
             System.out.println("Server is running: "+jedis.ping());
 
-            jedis.lpush("tutorial-list", "Redis is great");
-            jedis.lpush("tutorial-list", "Mongodb is... no coment");
-            jedis.lpush("tutorial-list", "Mysql is not a database");
-            jedis.lpush("tutorial-list", "Postgre is awesome");
+            jedis.lpush("greetings-list", "Redis is great");
+            jedis.lpush("greetings-list", "Mongodb is... no coment");
+            jedis.lpush("greetings-list", "Mysql is not a true database");
+            jedis.lpush("greetings-list", "Postgre is awesome");
 
         } catch (Exception e){
         }
