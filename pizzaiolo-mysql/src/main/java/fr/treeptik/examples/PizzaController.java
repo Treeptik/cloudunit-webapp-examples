@@ -1,4 +1,4 @@
-package fr.treeptik.pizzashop;
+package fr.treeptik.examples;
 
 import java.util.*;
 
