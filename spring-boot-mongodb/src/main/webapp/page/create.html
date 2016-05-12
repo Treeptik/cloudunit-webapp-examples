@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Create a movie page</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.13/angular.js"></script>
+        <script src="../myApp.js"></script>
+        <link href="http://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link href="http://getbootstrap.com/dist/css/bootstrap-theme.min.css" rel="stylesheet">
+    </head>
+    <body ng-app="myApp">
+        <nav class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="#">Movie create page</a>
+                </div>
+                <div id="navbar" class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        <li><a href="./index.html">Index</a></li>
+                        <li><a href="./create.html">Create</a></li>
+                        <li><a href="./delete.html">Delete</a></li>
+                        <li><a href="./update.html">Update</a></li>
+                        <li><a href="./find.html">Find</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <br><br><br><br>
+
+        <div class="col-sm-4">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Add a new movie</h3>
+                </div>
+                <div class="panel-body">
+                    <div ng-controller="CreateController">
+
+                        {{ $scope }}
+
+                        <h3>
+                            <span class="label label-default">
+                                Name :
+                            </span>
+                        </h3>
+                        <input ng-model="name" type="text">
+                        <h3>
+                            <span class="label label-default">
+                                Directors :
+                            </span>
+                        </h3>
+                        <input ng-model="director" type="text">
+                        <button class="btn btn-default" ng-click="addDirector()">Add</button>
+                        <h3>
+                            <span class="label label-default">
+                                Genres :
+                            </span>
+                        </h3>
+                        <input ng-model="genre" type="text">
+                        <button class="btn btn-default" ng-click="addGenre()">Add</button>
+                        <h3>
+                            <span class="label label-default">
+                                Nationalities :
+                            </span>
+                        </h3>
+                        <input ng-model="nationality" type="text">
+                        <button class="btn btn-default" ng-click="addNationality()">Add</button>
+                        <h3>
+                            <span class="label label-default">
+                                Actors :
+                            </span>
+                        </h3>
+                        <input ng-model="actor" type="text">
+                        <button class="btn btn-default" ng-click="addActor()">Add</button>
+                        <br><br>
+                        <button class="btn btn-success" ng-click="create()">Create</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
