@@ -12,7 +12,7 @@
     <!-- Enable @Controller annotation support -->
     <mvc:annotation-driven/>
     <context:property-placeholder/>
-    <context:component-scan base-package="fr.treeptik.pizzashop"/>
+    <context:component-scan base-package="fr.treeptik.examples"/>
     <tx:annotation-driven transaction-manager="transactionManager"/>
 
     <bean
@@ -37,7 +37,7 @@
 		<property name="dataSource" ref="myDataSource" />
 		<property name="packagesToScan">
 			<array>
-				<value>fr.treeptik.pizzashop</value>
+				<value>fr.treeptik.examples</value>
 			</array>
 		</property>
 		<property name="hibernateProperties">
