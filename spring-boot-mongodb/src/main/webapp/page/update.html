@@ -1,18 +1,20 @@
-<!DOCTYPE html>
-<html lang="en">
+<html ng-app="myApp">
     <head>
         <meta charset="UTF-8">
-        <title>Create a movie page</title>
-        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.3/angular.min.js"></script>
-        <script src="../file.js"></script>
-        <link href="http://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
-        <link href="http://getbootstrap.com/dist/css/bootstrap-theme.min.css" rel="stylesheet">
+        <title>Update a movie page</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.3/angular.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.3/angular-resource.js"></script>
+        <script src="../js/myApp.js"></script>
+        <script src="../js/movieController.js"></script>
+        <script src="../js/movieService.js"></script>
+        <link href="../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../css/bootstrap-theme.min.css" rel="stylesheet">
     </head>
-    <body>
+    <body ng-controller="MovieController">
         <nav class="navbar navbar-inverse navbar-fixed-top">
             <div class="container">
                 <div class="navbar-header">
-                    <a class="navbar-brand" href="#">Movie update page</a>
+                    <a class="navbar-brand" href="./index.html">Movie update page</a>
                 </div>
                 <div id="navbar" class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
@@ -27,44 +29,71 @@
         </nav>
         <br><br><br><br>
 
+        <div class="alert alert-success" role="alert" ng-show="status == 'Ok'">
+            <strong>Well done!</strong> You successfully update this movie page : {{ name }}.
+        </div>
 
         <div class="col-sm-4">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <h3 class="panel-title">Update a movie</h3>
+                    <h3 class="panel-title">Choose a movie</h3>
+                </div>
+                <div class="panel-body" ng-init="findAll()">
+                    <select name="movie" ng-model="selected">
+                        <option ng-repeat="movie in movies" name="movie.name">{{movie.name}}</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <div class="alert alert-success" role="alert" ng-show="status == 'Ok'">
+            <strong>Well done!</strong> You successfully update this movie page : {{ name }}.
+        </div>
+
+        <div class="col-sm-4" ng-show="selected">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Update this movie</h3>
                 </div>
                 <div class="panel-body">
-                    <form id="create-movie-form">
+                    <form>
                         <h3>
-                            <span class="label label-default">
-                                Name :
-                            </span>
+                                <span class="label label-default">
+                                    Name :
+                                </span>
                         </h3>
-                        <input ng-model="name" type="text">
+                        {{ selected }}
                         <h3>
-                            <span class="label label-default">
-                                Directors :
-                            </span>
+                                <span class="label label-default">
+                                    Directors :
+                                </span>
                         </h3>
-                        <input ng-model="directors" type="text">
+                        <input ng-model="director" type="text">
+                        <button class="btn btn-default" ng-click="addDirector(director); director='';">Add</button>
                         <h3>
-                            <span class="label label-default">
-                                Genres :
-                            </span>
+                                <span class="label label-default">
+                                    Genres :
+                                </span>
                         </h3>
-                        <input ng-model="genres" type="text">
+                        <input ng-model="genre" type="text">
+                        <button class="btn btn-default" ng-click="addGenre(genre); genre='';">Add</button>
                         <h3>
-                            <span class="label label-default">
-                                Nationalities :
-                            </span>
+                                <span class="label label-default">
+                                    Nationalities :
+                                </span>
                         </h3>
-                        <input ng-model="nationalities" type="text">
+                        <input ng-model="nationality" type="text">
+                        <button class="btn btn-default" ng-click="addNationality(nationality); nationality='';">Add</button>
                         <h3>
-                            <span class="label label-default">
-                                Actors :
-                            </span>
+                                <span class="label label-default">
+                                    Actors :
+                                </span>
                         </h3>
-                        <input ng-model="actors" type="text">
+                        <input ng-model="actor" type="text">
+                        <button class="btn btn-default" ng-click="addActor(actor); actor='';">Add</button>
+                        <br><br>
+                        <button class="btn btn-success"
+                                ng-click="updateMovie(selected, directors, genres, nationalities, actors)">Update</button>
                     </form>
                 </div>
             </div>

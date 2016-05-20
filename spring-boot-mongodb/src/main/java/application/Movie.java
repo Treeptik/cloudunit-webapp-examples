@@ -1,4 +1,4 @@
-package model;
+package application;
 
 import org.springframework.data.annotation.Id;
 
@@ -10,23 +10,27 @@ import java.util.List;
 
 public class Movie {
     @Id
-    private int id;
+    public int id;
 
     private String name;
+
+    private String displayName;
+
     private List<String> director;
+
     private List<String> genre;
+
     private List<String> nationalities;
+
     private List<String> actors;
+
+    private String picture;
 
     public Movie() {}
 
-    public int getId() {
-        return id;
-    }
+    public int getId() { return id; }
 
-    public void setId(int id) {
-        this.id = id;
-    }
+    public void setId(int id) { this.id = id; }
 
     public String getName() {
         return name;
@@ -34,6 +38,14 @@ public class Movie {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public String getDisplayName() {
+        return displayName;
+    }
+
+    public void setDisplayName(String displayName) {
+        this.displayName = displayName;
     }
 
     public List<String> getDirector() {
@@ -67,6 +79,10 @@ public class Movie {
     public void setActors(List<String> actors) {
         this.actors = actors;
     }
+
+    public String getPicture() { return picture; }
+
+    public void setPicture(String picture) { this.picture = picture; }
 
     public void update(String name, List<String> director, List<String> genre, List<String> nationalities, List<String> actors) {
         this.name = name;

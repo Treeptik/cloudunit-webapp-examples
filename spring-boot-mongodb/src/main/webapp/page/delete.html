@@ -1,18 +1,20 @@
-<!DOCTYPE html>
-<html lang="en" ng-app ng-controller="deleteController">
+<html ng-app="myApp">
     <head>
         <meta charset="UTF-8">
-        <title>Create a movie page</title>
-        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.3/angular.min.js"></script>
-        <script src="../file.js"></script>
-        <link href="http://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
-        <link href="http://getbootstrap.com/dist/css/bootstrap-theme.min.css" rel="stylesheet">
+        <title>Delete a movie page</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.3/angular.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.3/angular-resource.js"></script>
+        <script src="../js/myApp.js"></script>
+        <script src="../js/movieController.js"></script>
+        <script src="../js/movieService.js"></script>
+        <link href="../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../css/bootstrap-theme.min.css" rel="stylesheet">
     </head>
-    <body>
+    <body ng-controller="MovieController" ng-init="init()">
         <nav class="navbar navbar-inverse navbar-fixed-top">
             <div class="container">
                 <div class="navbar-header">
-                    <a class="navbar-brand" href="#">Movie delete page</a>
+                    <a class="navbar-brand" href="./index.html">Movie delete page</a>
                 </div>
                 <div id="navbar" class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
@@ -27,20 +29,32 @@
         </nav>
         <br><br><br><br>
 
+        <div class="alert alert-success" role="alert" ng-show="status == 'Ok'">
+            <strong>Well done!</strong> You successfully delete this movie page : {{ name }}.
+        </div>
+        <div class="alert alert-danger" role="alert" ng-show="status == 'Not found'">
+            <strong>Oh snap !</strong> Your movie page doesn't exist : {{ name }}.
+        </div>
+
         <div class="col-sm-4">
             <div class="panel panel-default">
                 <div class="panel-heading">
                     <h3 class="panel-title">Delete a movie</h3>
                 </div>
                 <div class="panel-body">
-                    <form id="delete-movie-form">
-                        <h3>
-                            <span class="label label-default">
-                                Name :
-                            </span>
-                        </h3>
-                        <input ng-model="name" type="text">
-                    </form>
+                    <div>
+                        <form>
+                            <h3>
+                                <span class="label label-default">
+                                    Name :
+                                </span>
+                            </h3>
+                            <input ng-model="name" type="text">
+                            <br><br>
+                            <button class="btn btn-success"
+                                ng-click="deleteMovie(name)" ng-if="name">Delete</button>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>
