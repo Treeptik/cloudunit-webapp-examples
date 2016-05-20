@@ -50,14 +50,13 @@ public class MongoConfig extends AbstractMongoConfiguration {
     @Override
     @Bean
     public Mongo mongo() {
-        host = System.getenv("MONGO_HOST");
-        port = Integer.parseInt(System.getenv("MONGO_PORT"));
-        username = System.getenv("MONGO_USERNAME");
-        database = System.getenv("MONGO_DB");
-        password = System.getenv("MONGO_PWD");
+        host = System.getenv("CU_DATABASE_DNS_MONGO_1");
+        port = Integer.parseInt(System.getenv("MONGODB_PORT"));
+        username = System.getenv("CU_DATABASE_USER_MONGO_1");
+        password = System.getenv("CU_DATABASE_PASSWORD_MONGO_1");
 
         log.info("MongoDB Initialization");
         return new MongoClient(singletonList(new ServerAddress(host, port)),
-                singletonList(MongoCredential.createCredential(username, database, password.toCharArray())));
+                singletonList(MongoCredential.createCredential(username, "admin", password.toCharArray())));
     }
 }
