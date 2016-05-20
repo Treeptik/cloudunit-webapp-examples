@@ -1,0 +1,243 @@
+2016-05-20 11:55:07.239  INFO 7201 --- [main] application.Application                  : Starting Application on angular5-W55xEU with PID 7201 (/home/angular5/cloudunit-exemples/spring-boot-mongodb/target/classes started by angular5 in /home/angular5/cloudunit-exemples/spring-boot-mongodb)
+2016-05-20 11:55:07.241  INFO 7201 --- [main] application.Application                  : No active profile set, falling back to default profiles: default
+2016-05-20 11:55:07.312  INFO 7201 --- [main] ationConfigEmbeddedWebApplicationContext : Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@17776a8: startup date [Fri May 20 11:55:07 CEST 2016]; root of context hierarchy
+2016-05-20 11:55:09.189  INFO 7201 --- [main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat initialized with port(s): 8080 (http)
+2016-05-20 11:55:09.207  INFO 7201 --- [main] o.apache.catalina.core.StandardService   : Starting service Tomcat
+2016-05-20 11:55:09.209  INFO 7201 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.0.33
+2016-05-20 11:55:09.302  INFO 7201 --- [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2016-05-20 11:55:09.302  INFO 7201 --- [localhost-startStop-1] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1994 ms
+2016-05-20 11:55:09.585  INFO 7201 --- [localhost-startStop-1] o.s.b.c.e.ServletRegistrationBean        : Mapping servlet: 'dispatcherServlet' to [/]
+2016-05-20 11:55:09.589  INFO 7201 --- [localhost-startStop-1] o.s.b.c.embedded.FilterRegistrationBean  : Mapping filter: 'characterEncodingFilter' to: [/*]
+2016-05-20 11:55:09.590  INFO 7201 --- [localhost-startStop-1] o.s.b.c.embedded.FilterRegistrationBean  : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2016-05-20 11:55:09.590  INFO 7201 --- [localhost-startStop-1] o.s.b.c.embedded.FilterRegistrationBean  : Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2016-05-20 11:55:09.590  INFO 7201 --- [localhost-startStop-1] o.s.b.c.embedded.FilterRegistrationBean  : Mapping filter: 'requestContextFilter' to: [/*]
+2016-05-20 11:55:09.683  INFO 7201 --- [main] application.MongoConfig                  : MongoDB Initialization
+2016-05-20 11:55:09.753  INFO 7201 --- [main] org.mongodb.driver.cluster               : Cluster created with settings {hosts=[localhost:27017], mode=MULTIPLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+2016-05-20 11:55:09.754  INFO 7201 --- [main] org.mongodb.driver.cluster               : Adding discovered server localhost:27017 to client view of cluster
+2016-05-20 11:55:09.819  INFO 7201 --- [cluster-ClusterId{value='573edefde58af31c216772aa', description='null'}-localhost:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:1, serverValue:5}] to localhost:27017
+2016-05-20 11:55:09.821  INFO 7201 --- [cluster-ClusterId{value='573edefde58af31c216772aa', description='null'}-localhost:27017] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[2, 6, 10]}, minWireVersion=0, maxWireVersion=2, electionId=null, maxDocumentSize=16777216, roundTripTimeNanos=974124}
+2016-05-20 11:55:09.822  INFO 7201 --- [cluster-ClusterId{value='573edefde58af31c216772aa', description='null'}-localhost:27017] org.mongodb.driver.cluster               : Discovered cluster type of STANDALONE
+2016-05-20 11:55:09.972  INFO 7201 --- [main] application.MovieServiceImpl             : ---- INITIALIZATION MOVIESERVICEIMPL ----
+2016-05-20 11:55:10.253  INFO 7201 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@17776a8: startup date [Fri May 20 11:55:07 CEST 2016]; root of context hierarchy
+2016-05-20 11:55:10.313  INFO 7201 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/movie/find/{name}],methods=[GET]}" onto public application.MovieDTO application.MovieController.findByName(java.lang.String)
+2016-05-20 11:55:10.314  INFO 7201 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/movie/findAll],methods=[GET]}" onto public java.util.List<application.MovieDTO> application.MovieController.findAll()
+2016-05-20 11:55:10.315  INFO 7201 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/movie/update],methods=[POST]}" onto public java.lang.String application.MovieController.update(java.lang.String)
+2016-05-20 11:55:10.315  INFO 7201 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/movie/delete/{name}],methods=[POST]}" onto public java.lang.String application.MovieController.delete(java.lang.String)
+2016-05-20 11:55:10.315  INFO 7201 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/movie/create],methods=[POST]}" onto public java.lang.String application.MovieController.create(java.lang.String)
+2016-05-20 11:55:10.317  INFO 7201 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2016-05-20 11:55:10.318  INFO 7201 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2016-05-20 11:55:10.340  INFO 7201 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2016-05-20 11:55:10.341  INFO 7201 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2016-05-20 11:55:10.376  INFO 7201 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2016-05-20 11:55:10.502  INFO 7201 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
+2016-05-20 11:55:10.565  INFO 7201 --- [main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat started on port(s): 8080 (http)
+2016-05-20 11:55:10.573  INFO 7201 --- [main] application.Application                  : Started Application in 3.651 seconds (JVM running for 4.002)
+2016-05-20 11:55:24.577  INFO 7201 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring FrameworkServlet 'dispatcherServlet'
+2016-05-20 11:55:24.577  INFO 7201 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization started
+2016-05-20 11:55:24.587  INFO 7201 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization completed in 10 ms
+2016-05-20 11:55:24.623  INFO 7201 --- [http-nio-8080-exec-1] application.MovieController              : ---- FIND ALL MOVIES ----
+2016-05-20 11:55:24.623  INFO 7201 --- [http-nio-8080-exec-1] application.MovieServiceImpl             : --- CALL FINDALL FUNCTION ---
+2016-05-20 11:55:24.650  INFO 7201 --- [http-nio-8080-exec-1] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:2, serverValue:6}] to localhost:27017
+2016-05-20 11:55:24.676  INFO 7201 --- [http-nio-8080-exec-1] application.MovieServiceImpl             : --- CALL CONVERTTODTOS FUNCTION ---
+2016-05-20 11:55:24.677  INFO 7201 --- [http-nio-8080-exec-1] application.MovieServiceImpl             : --- CALL CONVERTTODTO FUNCTION ---
+2016-05-20 11:55:24.677  INFO 7201 --- [http-nio-8080-exec-1] application.MovieServiceImpl             : --- CALL CONVERTTODTO FUNCTION ---
+2016-05-20 11:55:24.677  INFO 7201 --- [http-nio-8080-exec-1] application.MovieServiceImpl             : --- CALL CONVERTTODTO FUNCTION ---
+2016-05-20 11:55:24.677  INFO 7201 --- [http-nio-8080-exec-1] application.MovieServiceImpl             : --- CALL CONVERTTODTO FUNCTION ---
+2016-05-20 11:55:49.019  INFO 7201 --- [http-nio-8080-exec-2] application.MovieController              : ---- FIND ALL MOVIES ----
+2016-05-20 11:55:49.019  INFO 7201 --- [http-nio-8080-exec-2] application.MovieServiceImpl             : --- CALL FINDALL FUNCTION ---
+2016-05-20 11:55:49.023  INFO 7201 --- [http-nio-8080-exec-2] application.MovieServiceImpl             : --- CALL CONVERTTODTOS FUNCTION ---
+2016-05-20 11:55:49.023  INFO 7201 --- [http-nio-8080-exec-2] application.MovieServiceImpl             : --- CALL CONVERTTODTO FUNCTION ---
+2016-05-20 11:55:49.023  INFO 7201 --- [http-nio-8080-exec-2] application.MovieServiceImpl             : --- CALL CONVERTTODTO FUNCTION ---
+2016-05-20 11:55:49.023  INFO 7201 --- [http-nio-8080-exec-2] application.MovieServiceImpl             : --- CALL CONVERTTODTO FUNCTION ---
+2016-05-20 11:55:49.023  INFO 7201 --- [http-nio-8080-exec-2] application.MovieServiceImpl             : --- CALL CONVERTTODTO FUNCTION ---
+2016-05-20 11:55:54.608  INFO 7201 --- [http-nio-8080-exec-3] application.MovieController              : ---- FIND MOVIE : Cats & Dogs ----
+2016-05-20 11:55:54.609  INFO 7201 --- [http-nio-8080-exec-3] application.MovieServiceImpl             : --- CALL FINDBYNAME FUNCTION ---
+2016-05-20 11:55:54.609  INFO 7201 --- [http-nio-8080-exec-3] application.MovieServiceImpl             : --- CALL FINDMOVIEBYNAME FUNCTION ---
+2016-05-20 11:55:59.498  INFO 7201 --- [http-nio-8080-exec-4] application.MovieController              : ---- FIND ALL MOVIES ----
+2016-05-20 11:55:59.498  INFO 7201 --- [http-nio-8080-exec-4] application.MovieServiceImpl             : --- CALL FINDALL FUNCTION ---
+2016-05-20 11:55:59.502  INFO 7201 --- [http-nio-8080-exec-4] application.MovieServiceImpl             : --- CALL CONVERTTODTOS FUNCTION ---
+2016-05-20 11:55:59.502  INFO 7201 --- [http-nio-8080-exec-4] application.MovieServiceImpl             : --- CALL CONVERTTODTO FUNCTION ---
+2016-05-20 11:55:59.502  INFO 7201 --- [http-nio-8080-exec-4] application.MovieServiceImpl             : --- CALL CONVERTTODTO FUNCTION ---
+2016-05-20 11:55:59.502  INFO 7201 --- [http-nio-8080-exec-4] application.MovieServiceImpl             : --- CALL CONVERTTODTO FUNCTION ---
+2016-05-20 11:55:59.502  INFO 7201 --- [http-nio-8080-exec-4] application.MovieServiceImpl             : --- CALL CONVERTTODTO FUNCTION ---
+2016-05-20 11:56:00.390  INFO 7201 --- [http-nio-8080-exec-5] application.MovieController              : ---- FIND MOVIE : The Amazing Spider-Man ----
+2016-05-20 11:56:00.391  INFO 7201 --- [http-nio-8080-exec-5] application.MovieServiceImpl             : --- CALL FINDBYNAME FUNCTION ---
+2016-05-20 11:56:00.391  INFO 7201 --- [http-nio-8080-exec-5] application.MovieServiceImpl             : --- CALL FINDMOVIEBYNAME FUNCTION ---
+2016-05-20 11:56:03.401  INFO 7201 --- [http-nio-8080-exec-6] application.MovieController              : ---- FIND ALL MOVIES ----
+2016-05-20 11:56:03.401  INFO 7201 --- [http-nio-8080-exec-6] application.MovieServiceImpl             : --- CALL FINDALL FUNCTION ---
+2016-05-20 11:56:03.406  INFO 7201 --- [http-nio-8080-exec-6] application.MovieServiceImpl             : --- CALL CONVERTTODTOS FUNCTION ---
+2016-05-20 11:56:03.406  INFO 7201 --- [http-nio-8080-exec-6] application.MovieServiceImpl             : --- CALL CONVERTTODTO FUNCTION ---
+2016-05-20 11:56:03.406  INFO 7201 --- [http-nio-8080-exec-6] application.MovieServiceImpl             : --- CALL CONVERTTODTO FUNCTION ---
+2016-05-20 11:56:03.406  INFO 7201 --- [http-nio-8080-exec-6] application.MovieServiceImpl             : --- CALL CONVERTTODTO FUNCTION ---
+2016-05-20 11:56:03.406  INFO 7201 --- [http-nio-8080-exec-6] application.MovieServiceImpl             : --- CALL CONVERTTODTO FUNCTION ---
+2016-05-20 11:56:15.323  INFO 7201 --- [http-nio-8080-exec-8] application.MovieController              : ---- FIND MOVIE : Kikilapetitesorciere ----
+2016-05-20 11:56:15.323  INFO 7201 --- [http-nio-8080-exec-8] application.MovieServiceImpl             : --- CALL FINDBYNAME FUNCTION ---
+2016-05-20 11:56:15.323  INFO 7201 --- [http-nio-8080-exec-8] application.MovieServiceImpl             : --- CALL FINDMOVIEBYNAME FUNCTION ---
+2016-05-20 11:56:19.010  INFO 7201 --- [http-nio-8080-exec-9] application.MovieController              : ---- FIND ALL MOVIES ----
+2016-05-20 11:56:19.011  INFO 7201 --- [http-nio-8080-exec-9] application.MovieServiceImpl             : --- CALL FINDALL FUNCTION ---
+2016-05-20 11:56:19.014  INFO 7201 --- [http-nio-8080-exec-9] application.MovieServiceImpl             : --- CALL CONVERTTODTOS FUNCTION ---
+2016-05-20 11:56:19.015  INFO 7201 --- [http-nio-8080-exec-9] application.MovieServiceImpl             : --- CALL CONVERTTODTO FUNCTION ---
+2016-05-20 11:56:19.015  INFO 7201 --- [http-nio-8080-exec-9] application.MovieServiceImpl             : --- CALL CONVERTTODTO FUNCTION ---
+2016-05-20 11:56:19.015  INFO 7201 --- [http-nio-8080-exec-9] application.MovieServiceImpl             : --- CALL CONVERTTODTO FUNCTION ---
+2016-05-20 11:56:19.015  INFO 7201 --- [http-nio-8080-exec-9] application.MovieServiceImpl             : --- CALL CONVERTTODTO FUNCTION ---
+2016-05-20 11:56:19.934  INFO 7201 --- [http-nio-8080-exec-10] application.MovieController              : ---- FIND MOVIE : majonotakkyubin ----
+2016-05-20 11:56:19.934  INFO 7201 --- [http-nio-8080-exec-10] application.MovieServiceImpl             : --- CALL FINDBYNAME FUNCTION ---
+2016-05-20 11:56:19.934  INFO 7201 --- [http-nio-8080-exec-10] application.MovieServiceImpl             : --- CALL FINDMOVIEBYNAME FUNCTION ---
+2016-05-20 11:56:19.936  INFO 7201 --- [http-nio-8080-exec-10] application.MovieServiceImpl             : --- CALL CONVERTTODTO FUNCTION ---
+2016-05-20 11:56:31.206  INFO 7201 --- [http-nio-8080-exec-2] application.MovieController              : ---- FIND MOVIE : Majonotakkyūbin ----
+2016-05-20 11:56:31.214  INFO 7201 --- [http-nio-8080-exec-2] application.MovieServiceImpl             : --- CALL FINDBYNAME FUNCTION ---
+2016-05-20 11:56:31.214  INFO 7201 --- [http-nio-8080-exec-2] application.MovieServiceImpl             : --- CALL FINDMOVIEBYNAME FUNCTION ---
+2016-05-20 11:56:31.216  INFO 7201 --- [http-nio-8080-exec-2] application.MovieServiceImpl             : --- CALL CONVERTTODTO FUNCTION ---
+2016-05-20 11:59:14.537  INFO 7201 --- [Thread-2] ationConfigEmbeddedWebApplicationContext : Closing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@17776a8: startup date [Fri May 20 11:55:07 CEST 2016]; root of context hierarchy
+2016-05-20 11:59:14.540  INFO 7201 --- [Thread-2] o.s.j.e.a.AnnotationMBeanExporter        : Unregistering JMX-exposed beans on shutdown
+2016-05-20 11:59:14.545  INFO 7201 --- [Thread-2] org.mongodb.driver.connection            : Closed connection [connectionId{localValue:2, serverValue:6}] to localhost:27017 because the pool has been closed.
+2016-05-20 11:59:16.895  INFO 7418 --- [main] application.Application                  : Starting Application on angular5-W55xEU with PID 7418 (/home/angular5/cloudunit-exemples/spring-boot-mongodb/target/classes started by angular5 in /home/angular5/cloudunit-exemples/spring-boot-mongodb)
+2016-05-20 11:59:16.897  INFO 7418 --- [main] application.Application                  : No active profile set, falling back to default profiles: default
+2016-05-20 11:59:16.967  INFO 7418 --- [main] ationConfigEmbeddedWebApplicationContext : Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@17776a8: startup date [Fri May 20 11:59:16 CEST 2016]; root of context hierarchy
+2016-05-20 11:59:18.726  INFO 7418 --- [main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat initialized with port(s): 8080 (http)
+2016-05-20 11:59:18.738  INFO 7418 --- [main] o.apache.catalina.core.StandardService   : Starting service Tomcat
+2016-05-20 11:59:18.739  INFO 7418 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.0.33
+2016-05-20 11:59:18.822  INFO 7418 --- [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2016-05-20 11:59:18.823  INFO 7418 --- [localhost-startStop-1] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1860 ms
+2016-05-20 11:59:19.153  INFO 7418 --- [localhost-startStop-1] o.s.b.c.e.ServletRegistrationBean        : Mapping servlet: 'dispatcherServlet' to [/]
+2016-05-20 11:59:19.159  INFO 7418 --- [localhost-startStop-1] o.s.b.c.embedded.FilterRegistrationBean  : Mapping filter: 'characterEncodingFilter' to: [/*]
+2016-05-20 11:59:19.160  INFO 7418 --- [localhost-startStop-1] o.s.b.c.embedded.FilterRegistrationBean  : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2016-05-20 11:59:19.160  INFO 7418 --- [localhost-startStop-1] o.s.b.c.embedded.FilterRegistrationBean  : Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2016-05-20 11:59:19.161  INFO 7418 --- [localhost-startStop-1] o.s.b.c.embedded.FilterRegistrationBean  : Mapping filter: 'requestContextFilter' to: [/*]
+2016-05-20 11:59:19.259  INFO 7418 --- [main] application.MongoConfig                  : MongoDB Initialization
+2016-05-20 11:59:19.339  INFO 7418 --- [main] org.mongodb.driver.cluster               : Cluster created with settings {hosts=[localhost:27017], mode=MULTIPLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+2016-05-20 11:59:19.339  INFO 7418 --- [main] org.mongodb.driver.cluster               : Adding discovered server localhost:27017 to client view of cluster
+2016-05-20 11:59:19.420  INFO 7418 --- [cluster-ClusterId{value='573edff7e58af31cfa5aa533', description='null'}-localhost:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:1, serverValue:7}] to localhost:27017
+2016-05-20 11:59:19.422  INFO 7418 --- [cluster-ClusterId{value='573edff7e58af31cfa5aa533', description='null'}-localhost:27017] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[2, 6, 10]}, minWireVersion=0, maxWireVersion=2, electionId=null, maxDocumentSize=16777216, roundTripTimeNanos=796591}
+2016-05-20 11:59:19.423  INFO 7418 --- [cluster-ClusterId{value='573edff7e58af31cfa5aa533', description='null'}-localhost:27017] org.mongodb.driver.cluster               : Discovered cluster type of STANDALONE
+2016-05-20 11:59:19.583  INFO 7418 --- [main] application.MovieServiceImpl             : ---- INITIALIZATION MOVIESERVICEIMPL ----
+2016-05-20 11:59:19.835  INFO 7418 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@17776a8: startup date [Fri May 20 11:59:16 CEST 2016]; root of context hierarchy
+2016-05-20 11:59:19.896  INFO 7418 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/movie/find/{name}],methods=[GET]}" onto public application.MovieDTO application.MovieController.findByName(java.lang.String)
+2016-05-20 11:59:19.898  INFO 7418 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/movie/findAll],methods=[GET]}" onto public java.util.List<application.MovieDTO> application.MovieController.findAll()
+2016-05-20 11:59:19.899  INFO 7418 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/movie/update],methods=[POST]}" onto public java.lang.String application.MovieController.update(java.lang.String)
+2016-05-20 11:59:19.899  INFO 7418 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/movie/delete/{name}],methods=[POST]}" onto public java.lang.String application.MovieController.delete(java.lang.String)
+2016-05-20 11:59:19.899  INFO 7418 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/movie/create],methods=[POST]}" onto public java.lang.String application.MovieController.create(java.lang.String)
+2016-05-20 11:59:19.902  INFO 7418 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2016-05-20 11:59:19.902  INFO 7418 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2016-05-20 11:59:19.923  INFO 7418 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2016-05-20 11:59:19.923  INFO 7418 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2016-05-20 11:59:19.955  INFO 7418 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2016-05-20 11:59:20.078  INFO 7418 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
+2016-05-20 11:59:20.137  INFO 7418 --- [main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat started on port(s): 8080 (http)
+2016-05-20 11:59:20.142  INFO 7418 --- [main] application.Application                  : Started Application in 3.577 seconds (JVM running for 3.986)
+2016-05-20 11:59:28.073  INFO 7418 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring FrameworkServlet 'dispatcherServlet'
+2016-05-20 11:59:28.074  INFO 7418 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization started
+2016-05-20 11:59:28.085  INFO 7418 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization completed in 11 ms
+2016-05-20 11:59:28.132  INFO 7418 --- [http-nio-8080-exec-1] application.MovieController              : ---- FIND ALL MOVIES ----
+2016-05-20 11:59:28.132  INFO 7418 --- [http-nio-8080-exec-1] application.MovieServiceImpl             : --- CALL FINDALL FUNCTION ---
+2016-05-20 11:59:28.158  INFO 7418 --- [http-nio-8080-exec-1] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:2, serverValue:8}] to localhost:27017
+2016-05-20 11:59:28.181  INFO 7418 --- [http-nio-8080-exec-1] application.MovieServiceImpl             : --- CALL CONVERTTODTOS FUNCTION ---
+2016-05-20 11:59:28.181  INFO 7418 --- [http-nio-8080-exec-1] application.MovieServiceImpl             : --- CALL CONVERTTODTO FUNCTION ---
+2016-05-20 11:59:28.181  INFO 7418 --- [http-nio-8080-exec-1] application.MovieServiceImpl             : --- CALL CONVERTTODTO FUNCTION ---
+2016-05-20 11:59:28.181  INFO 7418 --- [http-nio-8080-exec-1] application.MovieServiceImpl             : --- CALL CONVERTTODTO FUNCTION ---
+2016-05-20 11:59:28.181  INFO 7418 --- [http-nio-8080-exec-1] application.MovieServiceImpl             : --- CALL CONVERTTODTO FUNCTION ---
+2016-05-20 11:59:34.366  INFO 7418 --- [http-nio-8080-exec-3] application.MovieController              : ---- CREATION MOVIE ----
+2016-05-20 11:59:34.380  INFO 7418 --- [http-nio-8080-exec-3] application.MovieController              : Creation of movie :Majonotakkyūbin
+2016-05-20 11:59:34.474  INFO 7418 --- [http-nio-8080-exec-3] application.MovieController              : Insertion in Mongo database
+2016-05-20 11:59:34.474  INFO 7418 --- [http-nio-8080-exec-3] application.MovieServiceImpl             : --- CALL CREATE FUNCTION ---
+2016-05-20 11:59:34.475  INFO 7418 --- [http-nio-8080-exec-3] application.MovieServiceImpl             : --- CALL FINDMOVIEBYNAME FUNCTION ---
+2016-05-20 11:59:34.485  INFO 7418 --- [http-nio-8080-exec-3] application.MovieServiceImpl             : Movie already existing : Majonotakkyūbin
+2016-05-20 11:59:34.486  INFO 7418 --- [http-nio-8080-exec-3] application.MovieController              : Creation complete
+2016-05-20 11:59:40.622  INFO 7418 --- [http-nio-8080-exec-4] application.MovieController              : ---- FIND ALL MOVIES ----
+2016-05-20 11:59:40.623  INFO 7418 --- [http-nio-8080-exec-4] application.MovieServiceImpl             : --- CALL FINDALL FUNCTION ---
+2016-05-20 11:59:40.631  INFO 7418 --- [http-nio-8080-exec-4] application.MovieServiceImpl             : --- CALL CONVERTTODTOS FUNCTION ---
+2016-05-20 11:59:40.631  INFO 7418 --- [http-nio-8080-exec-4] application.MovieServiceImpl             : --- CALL CONVERTTODTO FUNCTION ---
+2016-05-20 11:59:40.631  INFO 7418 --- [http-nio-8080-exec-4] application.MovieServiceImpl             : --- CALL CONVERTTODTO FUNCTION ---
+2016-05-20 11:59:40.631  INFO 7418 --- [http-nio-8080-exec-4] application.MovieServiceImpl             : --- CALL CONVERTTODTO FUNCTION ---
+2016-05-20 11:59:40.631  INFO 7418 --- [http-nio-8080-exec-4] application.MovieServiceImpl             : --- CALL CONVERTTODTO FUNCTION ---
+2016-05-20 11:59:44.225  INFO 7418 --- [http-nio-8080-exec-5] application.MovieController              : ---- FIND MOVIE : majonotakkyubin ----
+2016-05-20 11:59:44.225  INFO 7418 --- [http-nio-8080-exec-5] application.MovieServiceImpl             : --- CALL FINDBYNAME FUNCTION ---
+2016-05-20 11:59:44.225  INFO 7418 --- [http-nio-8080-exec-5] application.MovieServiceImpl             : --- CALL FINDMOVIEBYNAME FUNCTION ---
+2016-05-20 11:59:44.227  INFO 7418 --- [http-nio-8080-exec-5] application.MovieServiceImpl             : --- CALL CONVERTTODTO FUNCTION ---
+2016-05-20 11:59:46.228  INFO 7418 --- [http-nio-8080-exec-6] application.MovieController              : ---- FIND ALL MOVIES ----
+2016-05-20 11:59:46.228  INFO 7418 --- [http-nio-8080-exec-6] application.MovieServiceImpl             : --- CALL FINDALL FUNCTION ---
+2016-05-20 11:59:46.231  INFO 7418 --- [http-nio-8080-exec-6] application.MovieServiceImpl             : --- CALL CONVERTTODTOS FUNCTION ---
+2016-05-20 11:59:46.232  INFO 7418 --- [http-nio-8080-exec-6] application.MovieServiceImpl             : --- CALL CONVERTTODTO FUNCTION ---
+2016-05-20 11:59:46.232  INFO 7418 --- [http-nio-8080-exec-6] application.MovieServiceImpl             : --- CALL CONVERTTODTO FUNCTION ---
+2016-05-20 11:59:46.232  INFO 7418 --- [http-nio-8080-exec-6] application.MovieServiceImpl             : --- CALL CONVERTTODTO FUNCTION ---
+2016-05-20 11:59:46.232  INFO 7418 --- [http-nio-8080-exec-6] application.MovieServiceImpl             : --- CALL CONVERTTODTO FUNCTION ---
+2016-05-20 11:59:52.715  INFO 7418 --- [http-nio-8080-exec-7] application.MovieController              : ---- FIND ALL MOVIES ----
+2016-05-20 11:59:52.715  INFO 7418 --- [http-nio-8080-exec-7] application.MovieServiceImpl             : --- CALL FINDALL FUNCTION ---
+2016-05-20 11:59:52.718  INFO 7418 --- [http-nio-8080-exec-7] application.MovieServiceImpl             : --- CALL CONVERTTODTOS FUNCTION ---
+2016-05-20 11:59:52.719  INFO 7418 --- [http-nio-8080-exec-7] application.MovieServiceImpl             : --- CALL CONVERTTODTO FUNCTION ---
+2016-05-20 11:59:52.719  INFO 7418 --- [http-nio-8080-exec-7] application.MovieServiceImpl             : --- CALL CONVERTTODTO FUNCTION ---
+2016-05-20 11:59:52.719  INFO 7418 --- [http-nio-8080-exec-7] application.MovieServiceImpl             : --- CALL CONVERTTODTO FUNCTION ---
+2016-05-20 11:59:52.719  INFO 7418 --- [http-nio-8080-exec-7] application.MovieServiceImpl             : --- CALL CONVERTTODTO FUNCTION ---
+2016-05-20 12:00:18.351  INFO 7418 --- [http-nio-8080-exec-8] application.MovieController              : ---- FIND ALL MOVIES ----
+2016-05-20 12:00:18.352  INFO 7418 --- [http-nio-8080-exec-8] application.MovieServiceImpl             : --- CALL FINDALL FUNCTION ---
+2016-05-20 12:00:18.354  INFO 7418 --- [http-nio-8080-exec-8] application.MovieServiceImpl             : --- CALL CONVERTTODTOS FUNCTION ---
+2016-05-20 12:00:18.354  INFO 7418 --- [http-nio-8080-exec-8] application.MovieServiceImpl             : --- CALL CONVERTTODTO FUNCTION ---
+2016-05-20 12:00:18.354  INFO 7418 --- [http-nio-8080-exec-8] application.MovieServiceImpl             : --- CALL CONVERTTODTO FUNCTION ---
+2016-05-20 12:00:18.354  INFO 7418 --- [http-nio-8080-exec-8] application.MovieServiceImpl             : --- CALL CONVERTTODTO FUNCTION ---
+2016-05-20 12:00:18.354  INFO 7418 --- [http-nio-8080-exec-8] application.MovieServiceImpl             : --- CALL CONVERTTODTO FUNCTION ---
+2016-05-20 12:00:36.625  INFO 7418 --- [http-nio-8080-exec-9] application.MovieController              : ---- FIND ALL MOVIES ----
+2016-05-20 12:00:36.626  INFO 7418 --- [http-nio-8080-exec-9] application.MovieServiceImpl             : --- CALL FINDALL FUNCTION ---
+2016-05-20 12:00:36.629  INFO 7418 --- [http-nio-8080-exec-9] application.MovieServiceImpl             : --- CALL CONVERTTODTOS FUNCTION ---
+2016-05-20 12:00:36.629  INFO 7418 --- [http-nio-8080-exec-9] application.MovieServiceImpl             : --- CALL CONVERTTODTO FUNCTION ---
+2016-05-20 12:00:36.629  INFO 7418 --- [http-nio-8080-exec-9] application.MovieServiceImpl             : --- CALL CONVERTTODTO FUNCTION ---
+2016-05-20 12:00:36.629  INFO 7418 --- [http-nio-8080-exec-9] application.MovieServiceImpl             : --- CALL CONVERTTODTO FUNCTION ---
+2016-05-20 12:00:36.629  INFO 7418 --- [http-nio-8080-exec-9] application.MovieServiceImpl             : --- CALL CONVERTTODTO FUNCTION ---
+2016-05-20 12:00:42.143  INFO 7418 --- [http-nio-8080-exec-1] application.MovieController              : ---- FIND ALL MOVIES ----
+2016-05-20 12:00:42.143  INFO 7418 --- [http-nio-8080-exec-1] application.MovieServiceImpl             : --- CALL FINDALL FUNCTION ---
+2016-05-20 12:00:42.145  INFO 7418 --- [http-nio-8080-exec-1] application.MovieServiceImpl             : --- CALL CONVERTTODTOS FUNCTION ---
+2016-05-20 12:00:42.145  INFO 7418 --- [http-nio-8080-exec-1] application.MovieServiceImpl             : --- CALL CONVERTTODTO FUNCTION ---
+2016-05-20 12:00:42.145  INFO 7418 --- [http-nio-8080-exec-1] application.MovieServiceImpl             : --- CALL CONVERTTODTO FUNCTION ---
+2016-05-20 12:00:42.145  INFO 7418 --- [http-nio-8080-exec-1] application.MovieServiceImpl             : --- CALL CONVERTTODTO FUNCTION ---
+2016-05-20 12:00:42.145  INFO 7418 --- [http-nio-8080-exec-1] application.MovieServiceImpl             : --- CALL CONVERTTODTO FUNCTION ---
+2016-05-20 12:01:47.567  INFO 7418 --- [http-nio-8080-exec-2] application.MovieController              : ---- FIND ALL MOVIES ----
+2016-05-20 12:01:47.568  INFO 7418 --- [http-nio-8080-exec-2] application.MovieServiceImpl             : --- CALL FINDALL FUNCTION ---
+2016-05-20 12:01:47.570  INFO 7418 --- [http-nio-8080-exec-2] application.MovieServiceImpl             : --- CALL CONVERTTODTOS FUNCTION ---
+2016-05-20 12:01:47.570  INFO 7418 --- [http-nio-8080-exec-2] application.MovieServiceImpl             : --- CALL CONVERTTODTO FUNCTION ---
+2016-05-20 12:01:47.570  INFO 7418 --- [http-nio-8080-exec-2] application.MovieServiceImpl             : --- CALL CONVERTTODTO FUNCTION ---
+2016-05-20 12:01:47.570  INFO 7418 --- [http-nio-8080-exec-2] application.MovieServiceImpl             : --- CALL CONVERTTODTO FUNCTION ---
+2016-05-20 12:01:47.570  INFO 7418 --- [http-nio-8080-exec-2] application.MovieServiceImpl             : --- CALL CONVERTTODTO FUNCTION ---
+2016-05-20 12:01:50.944  INFO 7418 --- [http-nio-8080-exec-3] application.MovieController              : ---- FIND ALL MOVIES ----
+2016-05-20 12:01:50.945  INFO 7418 --- [http-nio-8080-exec-3] application.MovieServiceImpl             : --- CALL FINDALL FUNCTION ---
+2016-05-20 12:01:50.947  INFO 7418 --- [http-nio-8080-exec-3] application.MovieServiceImpl             : --- CALL CONVERTTODTOS FUNCTION ---
+2016-05-20 12:01:50.948  INFO 7418 --- [http-nio-8080-exec-3] application.MovieServiceImpl             : --- CALL CONVERTTODTO FUNCTION ---
+2016-05-20 12:01:50.948  INFO 7418 --- [http-nio-8080-exec-3] application.MovieServiceImpl             : --- CALL CONVERTTODTO FUNCTION ---
+2016-05-20 12:01:50.948  INFO 7418 --- [http-nio-8080-exec-3] application.MovieServiceImpl             : --- CALL CONVERTTODTO FUNCTION ---
+2016-05-20 12:01:50.950  INFO 7418 --- [http-nio-8080-exec-3] application.MovieServiceImpl             : --- CALL CONVERTTODTO FUNCTION ---
+2016-05-20 12:01:53.686  INFO 7418 --- [http-nio-8080-exec-4] application.MovieController              : ---- FIND ALL MOVIES ----
+2016-05-20 12:01:53.686  INFO 7418 --- [http-nio-8080-exec-4] application.MovieServiceImpl             : --- CALL FINDALL FUNCTION ---
+2016-05-20 12:01:53.688  INFO 7418 --- [http-nio-8080-exec-4] application.MovieServiceImpl             : --- CALL CONVERTTODTOS FUNCTION ---
+2016-05-20 12:01:53.688  INFO 7418 --- [http-nio-8080-exec-4] application.MovieServiceImpl             : --- CALL CONVERTTODTO FUNCTION ---
+2016-05-20 12:01:53.688  INFO 7418 --- [http-nio-8080-exec-4] application.MovieServiceImpl             : --- CALL CONVERTTODTO FUNCTION ---
+2016-05-20 12:01:53.688  INFO 7418 --- [http-nio-8080-exec-4] application.MovieServiceImpl             : --- CALL CONVERTTODTO FUNCTION ---
+2016-05-20 12:01:53.688  INFO 7418 --- [http-nio-8080-exec-4] application.MovieServiceImpl             : --- CALL CONVERTTODTO FUNCTION ---
+2016-05-20 12:02:16.773  INFO 7418 --- [http-nio-8080-exec-6] application.MovieController              : ---- FIND ALL MOVIES ----
+2016-05-20 12:02:16.773  INFO 7418 --- [http-nio-8080-exec-6] application.MovieServiceImpl             : --- CALL FINDALL FUNCTION ---
+2016-05-20 12:02:16.776  INFO 7418 --- [http-nio-8080-exec-6] application.MovieServiceImpl             : --- CALL CONVERTTODTOS FUNCTION ---
+2016-05-20 12:02:16.777  INFO 7418 --- [http-nio-8080-exec-6] application.MovieServiceImpl             : --- CALL CONVERTTODTO FUNCTION ---
+2016-05-20 12:02:16.777  INFO 7418 --- [http-nio-8080-exec-6] application.MovieServiceImpl             : --- CALL CONVERTTODTO FUNCTION ---
+2016-05-20 12:02:16.777  INFO 7418 --- [http-nio-8080-exec-6] application.MovieServiceImpl             : --- CALL CONVERTTODTO FUNCTION ---
+2016-05-20 12:02:16.777  INFO 7418 --- [http-nio-8080-exec-6] application.MovieServiceImpl             : --- CALL CONVERTTODTO FUNCTION ---
+2016-05-20 12:02:19.128  INFO 7418 --- [http-nio-8080-exec-7] application.MovieController              : ---- FIND ALL MOVIES ----
+2016-05-20 12:02:19.128  INFO 7418 --- [http-nio-8080-exec-7] application.MovieServiceImpl             : --- CALL FINDALL FUNCTION ---
+2016-05-20 12:02:19.130  INFO 7418 --- [http-nio-8080-exec-7] application.MovieServiceImpl             : --- CALL CONVERTTODTOS FUNCTION ---
+2016-05-20 12:02:19.130  INFO 7418 --- [http-nio-8080-exec-7] application.MovieServiceImpl             : --- CALL CONVERTTODTO FUNCTION ---
+2016-05-20 12:02:19.130  INFO 7418 --- [http-nio-8080-exec-7] application.MovieServiceImpl             : --- CALL CONVERTTODTO FUNCTION ---
+2016-05-20 12:02:19.130  INFO 7418 --- [http-nio-8080-exec-7] application.MovieServiceImpl             : --- CALL CONVERTTODTO FUNCTION ---
+2016-05-20 12:02:19.131  INFO 7418 --- [http-nio-8080-exec-7] application.MovieServiceImpl             : --- CALL CONVERTTODTO FUNCTION ---
+2016-05-20 12:02:20.783  INFO 7418 --- [http-nio-8080-exec-9] application.MovieController              : ---- FIND ALL MOVIES ----
+2016-05-20 12:02:20.783  INFO 7418 --- [http-nio-8080-exec-9] application.MovieServiceImpl             : --- CALL FINDALL FUNCTION ---
+2016-05-20 12:02:20.785  INFO 7418 --- [http-nio-8080-exec-9] application.MovieServiceImpl             : --- CALL CONVERTTODTOS FUNCTION ---
+2016-05-20 12:02:20.785  INFO 7418 --- [http-nio-8080-exec-9] application.MovieServiceImpl             : --- CALL CONVERTTODTO FUNCTION ---
+2016-05-20 12:02:20.786  INFO 7418 --- [http-nio-8080-exec-9] application.MovieServiceImpl             : --- CALL CONVERTTODTO FUNCTION ---
+2016-05-20 12:02:20.786  INFO 7418 --- [http-nio-8080-exec-9] application.MovieServiceImpl             : --- CALL CONVERTTODTO FUNCTION ---
+2016-05-20 12:02:20.786  INFO 7418 --- [http-nio-8080-exec-9] application.MovieServiceImpl             : --- CALL CONVERTTODTO FUNCTION ---
+2016-05-20 12:03:48.377  INFO 7418 --- [http-nio-8080-exec-10] application.MovieController              : ---- FIND ALL MOVIES ----
+2016-05-20 12:03:48.378  INFO 7418 --- [http-nio-8080-exec-10] application.MovieServiceImpl             : --- CALL FINDALL FUNCTION ---
+2016-05-20 12:03:48.380  INFO 7418 --- [http-nio-8080-exec-10] application.MovieServiceImpl             : --- CALL CONVERTTODTOS FUNCTION ---
+2016-05-20 12:03:48.380  INFO 7418 --- [http-nio-8080-exec-10] application.MovieServiceImpl             : --- CALL CONVERTTODTO FUNCTION ---
+2016-05-20 12:03:48.381  INFO 7418 --- [http-nio-8080-exec-10] application.MovieServiceImpl             : --- CALL CONVERTTODTO FUNCTION ---
+2016-05-20 12:03:48.381  INFO 7418 --- [http-nio-8080-exec-10] application.MovieServiceImpl             : --- CALL CONVERTTODTO FUNCTION ---
+2016-05-20 12:03:48.381  INFO 7418 --- [http-nio-8080-exec-10] application.MovieServiceImpl             : --- CALL CONVERTTODTO FUNCTION ---
+2016-05-20 12:03:54.442  INFO 7418 --- [Thread-2] ationConfigEmbeddedWebApplicationContext : Closing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@17776a8: startup date [Fri May 20 11:59:16 CEST 2016]; root of context hierarchy
+2016-05-20 12:03:54.444  INFO 7418 --- [Thread-2] o.s.j.e.a.AnnotationMBeanExporter        : Unregistering JMX-exposed beans on shutdown
+2016-05-20 12:03:54.447  INFO 7418 --- [Thread-2] org.mongodb.driver.connection            : Closed connection [connectionId{localValue:2, serverValue:8}] to localhost:27017 because the pool has been closed.

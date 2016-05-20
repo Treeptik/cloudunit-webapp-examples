@@ -25,6 +25,7 @@ import static java.util.Collections.singletonList;
 public class MongoConfig extends AbstractMongoConfiguration {
 
     private final Logger log = LoggerFactory.getLogger(MongoConfig.class);
+
     private String host;
     private int port;
     private String username;
@@ -48,12 +49,14 @@ public class MongoConfig extends AbstractMongoConfiguration {
 
     @Override
     @Bean
-    public Mongo mongo() throws Exception {
+    public Mongo mongo() {
         host = System.getenv("MONGO_HOST");
         port = Integer.parseInt(System.getenv("MONGO_PORT"));
         username = System.getenv("MONGO_USERNAME");
         database = System.getenv("MONGO_DB");
         password = System.getenv("MONGO_PWD");
+
+        log.info("MongoDB Initialization");
         return new MongoClient(singletonList(new ServerAddress(host, port)),
                 singletonList(MongoCredential.createCredential(username, database, password.toCharArray())));
     }

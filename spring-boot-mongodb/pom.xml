@@ -38,6 +38,12 @@
             <artifactId>mongo-java-driver</artifactId>
             <version>3.0.4</version>
         </dependency>
+
+        <!-- Logging -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-logging</artifactId>
+        </dependency>
     </dependencies>
 
     <build>
