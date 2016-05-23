@@ -1,33 +1,33 @@
 <html ng-app="myApp">
     <head>
-        <meta charset="UTF-8">
+        <meta charset="UTF-8" />
         <title>Create a movie page</title>
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.3/angular.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.3/angular-resource.js"></script>
-        <script src="../js/myApp.js"></script>
-        <script src="../js/movieController.js"></script>
-        <script src="../js/movieService.js"></script>
-        <link href="../css/bootstrap.min.css" rel="stylesheet">
-        <link href="../css/bootstrap-theme.min.css" rel="stylesheet">
+        <script src="/js/myApp.js"></script>
+        <script src="/js/movieController.js"></script>
+        <script src="/js/movieService.js"></script>
+        <link href="/css/bootstrap.min.css" rel="stylesheet" />
+        <link href="/css/bootstrap-theme.min.css" rel="stylesheet" />
     </head>
     <body ng-controller="MovieController" ng-init="init()">
         <nav class="navbar navbar-inverse navbar-fixed-top">
             <div class="container">
                 <div class="navbar-header">
-                    <a class="navbar-brand" href="./index.html">Movie create page</a>
+                    <a class="navbar-brand" href="/">Movie create page</a>
                 </div>
                 <div id="navbar" class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
-                        <li><a href="./index.html">Index</a></li>
-                        <li><a href="./create.html">Create</a></li>
-                        <li><a href="./delete.html">Delete</a></li>
-                        <li><a href="./update.html">Update</a></li>
-                        <li><a href="./find.html">Find</a></li>
+                        <li><a href="/">Index</a></li>
+                        <li><a href="/create">Create</a></li>
+                        <li><a href="/delete">Delete</a></li>
+                        <li><a href="/update">Update</a></li>
+                        <li><a href="/find">Find</a></li>
                     </ul>
                 </div>
             </div>
         </nav>
-        <br><br><br><br>
+        <br/><br/><br/><br/>
 
         <div class="alert alert-success" role="alert" ng-show="status == 'Ok'">
             <strong>Well done!</strong> You successfully create this movie page : {{ name }}.
@@ -49,42 +49,42 @@
                                     Name :
                                 </span>
                             </h3>
-                            <input ng-model="name" type="text" required>
+                            <input ng-model="name" type="text" />
                             <h3>
                                 <span class="label label-default">
                                     Directors :
                                 </span>
                             </h3>
-                            <input ng-model="director" type="text">
+                            <input ng-model="director" type="text" />
                             <button class="btn btn-default" ng-click="addDirector(director); director='';">Add</button>
                             <h3>
                                 <span class="label label-default">
                                     Genres :
                                 </span>
                             </h3>
-                            <input ng-model="genre" type="text">
+                            <input ng-model="genre" type="text" />
                             <button class="btn btn-default" ng-click="addGenre(genre); genre='';">Add</button>
                             <h3>
                                 <span class="label label-default">
                                     Nationalities :
                                 </span>
                             </h3>
-                            <input ng-model="nationality" type="text">
+                            <input ng-model="nationality" type="text" />
                             <button class="btn btn-default" ng-click="addNationality(nationality); nationality='';">Add</button>
                             <h3>
                                 <span class="label label-default">
                                     Actors :
                                 </span>
                             </h3>
-                            <input ng-model="actor" type="text">
+                            <input ng-model="actor" type="text" />
                             <button class="btn btn-default" ng-click="addActor(actor); actor='';">Add</button>
                             <h3>
                                 <span class="label label-default">
                                     Picture :
                                 </span>
                             </h3>
-                            <input ng-model="picture" type="text" required>
-                            <br><br>
+                            <input ng-model="picture" type="text" />
+                            <br/><br/>
                             <button class="btn btn-success"
                                     ng-click="createMovie(name, directors, genres, nationalities, actors, picture)" ng-if="name">Create</button>
                         </form>

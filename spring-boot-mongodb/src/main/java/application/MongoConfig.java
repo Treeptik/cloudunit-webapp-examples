@@ -49,11 +49,17 @@ public class MongoConfig extends AbstractMongoConfiguration {
 
     @Override
     @Bean
-    public Mongo mongo() {
+    public Mongo mongo() throws Exception {
         host = System.getenv("CU_DATABASE_DNS_MONGO_1");
-        port = Integer.parseInt(System.getenv("MONGODB_PORT"));
+        port = 27017;
         username = System.getenv("CU_DATABASE_USER_MONGO_1");
+        database = System.getenv("CU_DATABASE_NAME");
         password = System.getenv("CU_DATABASE_PASSWORD_MONGO_1");
+
+        log.info("CU_DATABASE_DNS_MONGO_1 : " + host);
+        log.info("CU_DATABASE_USER_MONGO_1 : " + username);
+        log.info("CU_DATABASE_NAME : " + database);
+        log.info("CU_DATABASE_PASSWORD_MONGO_1 : " + password);
 
         log.info("MongoDB Initialization");
         return new MongoClient(singletonList(new ServerAddress(host, port)),

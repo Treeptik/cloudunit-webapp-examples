@@ -3,7 +3,7 @@
 myApp.factory('MovieService', ['$http', '$q', function ($http, $q) {
     return {
         createMovie: function(movie) {
-            var promise = $http.post('http://localhost:8080/movie/create', movie);
+            var promise = $http.post('/movie/create', movie);
 
             promise.success (function(response) {
                 return response.data;
@@ -15,7 +15,7 @@ myApp.factory('MovieService', ['$http', '$q', function ($http, $q) {
             return promise;
         },
         deleteMovie: function(name) {
-            var promise = $http.post('http://localhost:8080/movie/delete/' + name);
+            var promise = $http.post('/movie/delete/' + name);
 
             promise.success (function(response) {
                 return response;
@@ -28,7 +28,7 @@ myApp.factory('MovieService', ['$http', '$q', function ($http, $q) {
             return promise;
         },
         updateMovie: function(movieName, movie) {
-            var promise = $http.post('http://localhost:8080/movie/update', movie);
+            var promise = $http.post('/movie/update', movie);
 
             promise.success (function(response) {
                 return response;
@@ -41,7 +41,7 @@ myApp.factory('MovieService', ['$http', '$q', function ($http, $q) {
             return promise;
         },
         findAll: function() {
-            var promise = $http.get('http://localhost:8080/movie/findAll');
+            var promise = $http.get('/movie/findAll');
 
             promise.success (function(response) {
                 return response;
@@ -54,7 +54,7 @@ myApp.factory('MovieService', ['$http', '$q', function ($http, $q) {
             return promise;
         },
         findMovie: function(name) {
-            var promise = $http.get('http://localhost:8080/movie/find/' + name);
+            var promise = $http.get('/movie/find/' + name);
 
             promise.success (function(response) {
                 return response;

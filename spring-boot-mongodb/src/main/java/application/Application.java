@@ -22,6 +22,7 @@ public class Application {
         return new WebMvcConfigurerAdapter() {
             @Override
             public void addCorsMappings(CorsRegistry registry) {
+                registry.addMapping("/").allowedOrigins("*");
                 registry.addMapping("/movie/**").allowedOrigins("*");
                 registry.addMapping("/create").allowedOrigins("*");
                 registry.addMapping("/delete/**").allowedOrigins("*");

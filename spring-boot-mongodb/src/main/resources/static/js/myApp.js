@@ -1,6 +1,6 @@
 'use strict';
 
-var myApp = angular.module('myApp', ['ngResource']);
+var myApp = angular.module('myApp', []);
 
 myApp.config(['$httpProvider', function($httpProvider) {
         $httpProvider.defaults.useXDomain = true;
