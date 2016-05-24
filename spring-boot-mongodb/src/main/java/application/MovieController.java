@@ -2,13 +2,18 @@ package application;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.mongodb.*;
+import com.mongodb.util.JSON;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import javax.annotation.PostConstruct;
 import java.text.Normalizer;
 import java.util.List;
+
+import static java.util.Collections.singletonList;
 
 /**
  * Created by angular5 on 12/05/16.
@@ -20,6 +25,39 @@ public class MovieController {
     private static Logger logger = LoggerFactory.getLogger(MovieController.class);
 
     private final MovieService service;
+
+    @PostConstruct
+    public void initMongo() {
+        logger.info("Initialization of Mongo database");
+
+        String host = System.getenv("CU_DATABASE_DNS_MONGO_1");
+        int port = 27017;
+        String username = System.getenv("CU_DATABASE_USER_MONGO_1");
+        String database = System.getenv("CU_DATABASE_NAME");
+        String password = System.getenv("CU_DATABASE_PASSWORD_MONGO_1");
+
+        logger.info("MongoDB Initialization");
+        Mongo mongo = new MongoClient(singletonList(new ServerAddress(host, port)),
+                singletonList(MongoCredential.createCredential(username, "admin", password.toCharArray())));
+
+        DB db = mongo.getDB(database);
+
+        String line1 = "{ '_id' : 1, '_class' : 'application.Movie', 'name' : 'theshawshankredemption', 'displayName' : 'The Shawshank Redemption', 'director' : [ 'Frank Darabont' ], 'genre' : [ 'Crime', 'Drama' ], 'nationalities' : [ 'American' ], 'actors' : [ 'Tim Robbins', 'Morgan Freeman' ], 'picture' : 'http://www.onewhowakes.org/wp-content/uploads/2013/11/the_shawshank_redemption_by_rikud0k0-d5rpssf.jpg' }";
+        String line2 = "{ '_id' : 2, '_class' : 'application.Movie', 'name' : 'thegodfather', 'displayName' : 'The Godfather', 'director' : [ 'Francis Ford Coppola' ], 'genre' : [ 'Crime', 'Drama' ], 'nationalities' : [ 'Japanese' ], 'actors' : [ 'Marlon Brando', 'Al Pacino', 'James Caan' ], 'picture' : 'http://keyartdesigns.com/wp-content/uploads/2010/09/the-godfather-movie-poster-1020243893.jpg' }";
+        String line3 = "{ '_id' : 3, '_class' : 'application.Movie', 'name' : 'thedarkknight', 'displayName' : 'The Dark Knight', 'director' : [ 'Christopher Nolan' ], 'genre' : [ 'Action', 'Crime', 'Thriller' ], 'nationalities' : [ 'American', 'English' ], 'actors' : [ 'Christian Bale', 'Heath Ledger', 'Morgan Freeman', 'Gary Oldman' ], 'picture' : 'http://www.impawards.com/2008/posters/dark_knight_ver5.jpg' }";
+        String line4 = "{ '_id' : 4, '_class' : 'application.Movie', 'name' : 'pulpfiction', 'displayName' : 'Pulp Fiction', 'director' : [ 'Quentin Tarantino' ], 'genre' : [ 'Crime', 'Drama' ], 'nationalities' : [ 'American' ], 'actors' : [ 'John Travolta', 'Uma Thurman', 'Samuel L. Jackson' ], 'picture' : 'https://originalvintagemovieposters.com/wp-content/uploads/2014/07/PULP-FICTION-2100.jpg' }";
+
+        DBObject dbObject1 = (DBObject) JSON.parse(line1);
+        DBObject dbObject2 = (DBObject) JSON.parse(line2);
+        DBObject dbObject3 = (DBObject) JSON.parse(line3);
+        DBObject dbObject4 = (DBObject) JSON.parse(line4);
+
+        db.getCollection("movie");
+
+        DBCollection collection = db.getCollection("movie");
+
+        collection.insert(dbObject1, dbObject2, dbObject3, dbObject4);
+    }
 
     @Autowired
     public MovieController(MovieService service) {
