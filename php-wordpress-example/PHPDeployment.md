@@ -14,6 +14,11 @@ WordPress use MySQL for its databases. So, we need to add MySQL module. Version 
 
 ![Add MySQL Module](./Pictures/MySQLModule.png)
 
+You need to defined MySQL environment variables.
+For that, edit the file */etc/apache2/conf.d/env-variables.conf* and add the lines described below.
+
+![MySQL environment variables](./Pictures/MySQLVar.png)
+
 In *Settings* tab, you can add a domain name if you want. For that, write your domain name and click on *Add an alias*.
 
 ![Use a domain name](./Pictures/DomainName.png)
@@ -25,7 +30,7 @@ Now, the application is configured, so restart it for update changes in *Overvie
 You can clone the Git repository [here](https://github.com/WordPress/WordPress.git).
 After download, go to WorkPress directory and copy the file *wp-config-sample.php* then rename it to *wp-config*.
 
-Edit this file and add your MySQL configuration (host, database name, username, password) which you can find in *Overview* tab.
+Edit this file and add your MySQL configuration (host, database name, username, password) using environment variables which you can find in *Overview* tab.
 
 ![MySQL configuration in *config.php*](./Pictures/ConfigWordPress.png)
 
@@ -41,4 +46,8 @@ Finally, open a new tab in your browser and go to your homepage (Use your domain
 That's all ! You have deploy an WordPress in CloudUnit.
 
 ![Application deployed](./Pictures/Final.png)
+
+## Clone the application
+
+If you wanna clone the application
 
