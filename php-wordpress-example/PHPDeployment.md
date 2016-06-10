@@ -49,5 +49,15 @@ That's all ! You have deploy an WordPress in CloudUnit.
 
 ## Clone the application
 
-If you wanna clone the application
+If you want to clone the application, you need to create a snapshot of this application.
+For that, go to *Create template* tab, give a name (and a comment if you want) and click on *Create* button.
+
+The next time is to create a new application using this snapshot.
+Go to *App templates* tab and create a new application using this template.
+
+![Create an application from a template](./Pictures/UseSnapshot.png)
+
+And it's done, you have a new application which the exact copy of the first one.
+
+![Clone created](./Pictures/FinalClone.png)
 
