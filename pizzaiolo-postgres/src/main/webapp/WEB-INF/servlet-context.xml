@@ -22,36 +22,36 @@
     </bean>
 
     <bean id="myDataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
-        <property name="driverClassName" value="com.mysql.jdbc.Driver"/>
-        <property name="url" value="jdbc:mysql://${CU_DATABASE_DNS_MYSQL}:3306/${CU_DATABASE_NAME_MYSQL}"/>
-        <property name="username" value="${CU_DATABASE_USER_MYSQL}"/>
-        <property name="password" value="${CU_DATABASE_PASSWORD_MYSQL}"/>
+        <property name="driverClassName" value="org.postgresql.Driver"/>
+        <property name="url" value="jdbc:postgresql://${CU_DATABASE_DNS_POSTGRESQL}:5432/${CU_DATABASE_NAME_POSTGRESQL}"/>
+        <property name="username" value="${CU_DATABASE_USER_POSTGRESQL}"/>
+        <property name="password" value="${CU_DATABASE_PASSWORD_POSTGRESQL}"/>
         <property name="validationQuery" value="SELECT 1"/>
     </bean>
     <jdbc:initialize-database data-source="myDataSource">
-        <jdbc:script location="classpath:database-mysql.sql"/>
+        <jdbc:script location="classpath:database-postgres.sql"/>
     </jdbc:initialize-database>
 
-	<bean id="mySessionFactory"
-		class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
-		<property name="dataSource" ref="myDataSource" />
-		<property name="packagesToScan">
-			<array>
-				<value>fr.treeptik.examples</value>
-			</array>
-		</property>
-		<property name="hibernateProperties">
-			<value>
-                hibernate.dialect=org.hibernate.dialect.MySQLDialect
+    <bean id="mySessionFactory"
+          class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
+        <property name="dataSource" ref="myDataSource" />
+        <property name="packagesToScan">
+            <array>
+                <value>fr.treeptik.examples</value>
+            </array>
+        </property>
+        <property name="hibernateProperties">
+            <value>
+                hibernate.dialect=org.hibernate.dialect.PostgreSQLDialect
                 hibernate.show_sql=false
             </value>
         </property>
     </bean>
 
-<bean id="transactionManager"
-      class="org.springframework.orm.hibernate4.HibernateTransactionManager">
-<property name="sessionFactory" ref="mySessionFactory"/>
-</bean>
+    <bean id="transactionManager"
+          class="org.springframework.orm.hibernate4.HibernateTransactionManager">
+        <property name="sessionFactory" ref="mySessionFactory"/>
+    </bean>
 
 
-        </beans>
+</beans>
